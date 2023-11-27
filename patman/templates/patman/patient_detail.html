@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>{{ patient.id }} </h1>
+  <div>
+    {{ patient.name }} |
+    {{ patient.age }}세 |
+    {{ patient.reg_date }} 등록 |
+    비고: {{ patient.note }} |
+  </div>
+{% endblock %}
