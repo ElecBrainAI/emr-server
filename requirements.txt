@@ -6,10 +6,9 @@ django-environ==0.11.2
 gunicorn==21.2.0
 h5py==3.9.0
 importlib-resources==6.0.1
-keras==2.14.0
+mysqlclient==2.2.0
 packaging==23.2
 Pillow==10.0.1
-protobuf==4.24.3
 sqlparse==0.4.4
 tensorflow-hub==0.14.0
 typing_extensions==4.8.0
