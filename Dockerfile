@@ -5,8 +5,8 @@ FROM python:3.9
 WORKDIR /app
 
 # 필요한 시스템 패키지 설치
-RUN apt-get update && \
-    apt-get install -y libmysqlclient-dev gcc pkg-config
+RUN apt-get update && apt-get install -y libmysqlclient-dev gcc pkg-config
+
 
 # Python 의존성 파일 복사 및 설치
 COPY requirements.txt .
