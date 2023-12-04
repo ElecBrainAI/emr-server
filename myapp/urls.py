@@ -23,5 +23,5 @@ from django.urls import re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),
+    path('patman/', include('core.urls')),
 ]
