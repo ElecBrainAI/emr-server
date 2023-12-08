@@ -344,3 +344,184 @@ class Record(models.Model):
         db_table = 'record'
         unique_together = (('record_id', 'patient'),)
 
+
+
+class Questionnaire(models.Model):
+    patient = models.OneToOneField('Patient', models.DO_NOTHING, primary_key=True)
+    allergy = models.CharField(max_length=30, blank=True, null=True)
+    disease = models.CharField(max_length=30, blank=True, null=True)
+    symptom = models.CharField(max_length=20, blank=True, null=True)
+    symptom_period = models.CharField(max_length=17, blank=True, null=True)
+    reh_status = models.IntegerField(blank=True, null=True)
+    disable_status = models.CharField(max_length=50)
+    smoke_period = models.CharField(max_length=30, blank=True, null=True)
+    drink = models.IntegerField(blank=True, null=True)
+    exercise = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'questionnaire'
+
+
+
+class Inbody(models.Model):
+    patient = models.OneToOneField('Patient', models.DO_NOTHING, primary_key=True)
+    inbody_id = models.CharField(max_length=50)
+    measure_date = models.DateTimeField()
+    patient_weight = models.CharField(max_length=30)
+    body_fat_percentage = models.CharField(max_length=30)
+    muscle_mass = models.CharField(max_length=30)
+    basal_metabolism = models.CharField(max_length=30)
+    fatness_index = models.CharField(max_length=30)
+    aqua = models.CharField(max_length=30)
+    obesity_scale = models.CharField(max_length=30)
+    unit_analysis = models.CharField(max_length=30)
+    nurse = models.ForeignKey('Nurse', models.DO_NOTHING, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'inbody'
+
+
+
+class Xray(models.Model):
+    patient = models.OneToOneField('Patient', models.DO_NOTHING, primary_key=True)
+    staff_id = models.CharField(max_length=255)
+    shooting_date = models.DateTimeField()
+    shooting_equipment = models.CharField(max_length=255, blank=True, null=True)
+    shooting_part = models.CharField(max_length=255, blank=True, null=True)
+    xray_type = models.CharField(max_length=255, blank=True, null=True)
+    doctor_opinion = models.TextField(blank=True, null=True)
+    image_url = models.CharField(max_length=255, blank=True, null=True)
+    nurse = models.ForeignKey('Nurse', models.DO_NOTHING, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'xray'
+
+
+
+class Authority(models.Model):
+    authority_id = models.CharField(primary_key=True, max_length=50)
+    author_name = models.CharField(max_length=70)
+    register_date = models.DateTimeField()
+    revise_date = models.DateTimeField(blank=True, null=True)
+    remove_y = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'authority'
+
+
+class PatientAuthority(models.Model):
+    patient = models.OneToOneField('Patient', models.DO_NOTHING, primary_key=True)  # The composite primary key (patient_id, authority_id) found, that is not supported. The first column is selected.
+    authority = models.ForeignKey('Authority', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'patient_authority'
+        unique_together = (('patient', 'authority'),)
+
+
+
+class NokAuthority(models.Model):
+    protector = models.OneToOneField('Nok', models.DO_NOTHING, primary_key=True)  # The composite primary key (protector_id, authority_id, patient_id) found, that is not supported. The first column is selected.
+    patient = models.ForeignKey('Patient', models.DO_NOTHING)
+    authority = models.ForeignKey('Authority', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'nok_authority'
+        unique_together = (('protector', 'authority', 'patient'),)
+
+
+
+class DoctorAuthority(models.Model):
+    doctor = models.OneToOneField('Doctor', models.DO_NOTHING, primary_key=True)  # The composite primary key (doctor_id, authority_id) found, that is not supported. The first column is selected.
+    authority = models.ForeignKey('Authority', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'doctor_authority'
+        unique_together = (('doctor', 'authority'),)
+
+
+
+class NurseAuthorization(models.Model):
+    authority = models.ForeignKey('Authority', models.DO_NOTHING)
+    nurse = models.OneToOneField('Nurse', models.DO_NOTHING, primary_key=True)  # The composite primary key (nurse_id, authority_id) found, that is not supported. The first column is selected.
+
+    class Meta:
+        managed = False
+        db_table = 'nurse_authorization'
+        unique_together = (('nurse', 'authority'),)
+
+
+
+class TherapistAuthority(models.Model):
+    authority = models.ForeignKey('Authority', models.DO_NOTHING)
+    therapist = models.OneToOneField('Therapist', models.DO_NOTHING, primary_key=True)  # The composite primary key (therapist_id, authority_id) found, that is not supported. The first column is selected.
+
+    class Meta:
+        managed = False
+        db_table = 'therapist_authority'
+        unique_together = (('therapist', 'authority'),)
+
+
+
+class ManagerAuthority(models.Model):
+    authority = models.ForeignKey('Authority', models.DO_NOTHING)
+    admin = models.OneToOneField('Admin', models.DO_NOTHING, primary_key=True)  # The composite primary key (admin_id, authority_id) found, that is not supported. The first column is selected.
+
+    class Meta:
+        managed = False
+        db_table = 'manager_authority'
+        unique_together = (('admin', 'authority'),)
+
+
+
+
+class Equipment(models.Model):
+    equipment_id = models.CharField(primary_key=True, max_length=50)
+    equipment_kind = models.CharField(max_length=50)
+    equipment_location = models.CharField(max_length=50)
+    use_equipment = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'equipment'
+
+
+
+
+class EquipmentRental(models.Model):
+    equipment = models.OneToOneField('Equipment', models.DO_NOTHING, primary_key=True)
+    rental_period = models.CharField(max_length=17)
+    patient = models.ForeignKey('Patient', models.DO_NOTHING, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'equipment_rental'
+
+
+
+class RehabilitationEquipment(models.Model):
+    reh_id = models.CharField(primary_key=True, max_length=50)
+    reh_equipment_type = models.CharField(max_length=50)
+    reh_equipment_location = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'rehabilitation_equipment'
+
+
+
+
+class UseRehabilitationEquipment(models.Model):
+    reh = models.OneToOneField('RehabilitationEquipment', models.DO_NOTHING, primary_key=True)
+    use_reh_equipment = models.IntegerField()
+    patient = models.ForeignKey('Patient', models.DO_NOTHING, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'use_rehabilitation_equipment'
