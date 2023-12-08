@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 배우기</title>
+</head>
+<body>
+<h1>데이터베이스 실습 13주차</h1>
+<hr>
+<p>HTML 문서의 기본구조를 배웁니다.</p>
+<div id="container">
+    <header>
+        헤더
+        <nav>
+            헤더의 네비게이션 영역
+        </nav>
+    </header>
+</div>
+<main class="contents">
+    <section id="contents">
+        <h2>structure 구역</h2>
+        semanticTag 내용
+        <fieldset>
+            <legend>환자 정보</legend>
+            <label for="name">이름 입력</label>
+            <input type="search" id='name'/>
+            <label for="age">나이</label>
+            <input type="number" min="1" max="100" id="age"/>
+            <label for="gender">성별</label>
+            <select id="gender">
+                <option value="male">남</option>
+                <option value="female">여</option>
+            </select>
+            <div>
+                <input type='submit' value="갱신하기">
+                <input type="reset" value="전체 삭제">
+            </div>
+            <table>
+                <tr>
+                    <td>1행1열</td>
+                    <td>1행2열</td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+              <legend>등록일</legend>
+              <label for="reg-date">등록일</label>
+              <input type="date" id="reg-date">
+              <input type="button" value="새창 열기" onclick="window.open()"/>
+              <button type="button" onclick="location.href='..'">상위 페이지</button>
+        </fieldset>
+    </section>
+</main>
+<footer>
+    <section id="bottomMenu">
+        bottomMenu 구역
+    </section>
+</footer>
+</body>
+</html>

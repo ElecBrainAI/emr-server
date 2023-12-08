@@ -1,15 +1,7 @@
-html, body{
-	background-color: #0a192f;
+textarea {
+    width: 100%;
 }
 
-.info{
-	margin-top: 25vh;
-	margin-left: 30%;
-	color: rgb(204, 214, 246);
-
-}
-
-.info a{
-	color: rgb(100, 255, 218);
-	text-decoration: none;
+input[type=submit] {
+    margin-top: 10px;
 }
