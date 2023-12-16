@@ -1,15 +1,16 @@
 from django.contrib import admin
-from .models import Patient, Nok, Dept, Doctor, Nurse, Therapist, Admin, Calender, ExcerTherapy, PersonTherapy, DailyLife, Perception, Sense, Physical, Muscular, Cardiopulmonary, Flexibility, Quickness, Hospitalization, Reservation, Diagnosis, Record
+
+from .models import Patient, Nok, Dept, Doctor, Nurse, Therapist, Admin, Calender, ExcerTherapy, PersonTherapy, DailyLife, Perception, Sense, Physical, Muscular, Cardiopulmonary, Flexibility, Quickness, Hospitalization, Reservation, Diagnosis, Record, Questionnaire, Inbody, Xray, Authority, PatientAuthority, NokAuthority, DoctorAuthority, NurseAuthorization, TherapistAuthority, ManagerAuthority, Equipment, EquipmentRental, RehabilitationEquipment, UseRehabilitationEquipment
 
 
 
 
 # Register your models here.
 
-class PatientAdmin(admin.ModelAdmin):
+class ModelAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
-admin.site.register(Patient, PatientAdmin)
+admin.site.register(Patient, ModelAdmin)
 admin.site.register(Nok)
 admin.site.register(Dept)
 admin.site.register(Doctor)
@@ -31,3 +32,17 @@ admin.site.register(Hospitalization)
 admin.site.register(Reservation)
 admin.site.register(Diagnosis)
 admin.site.register(Record)
+admin.site.register(Questionnaire)
+admin.site.register(Inbody)
+admin.site.register(Xray)
+admin.site.register(Authority)
+admin.site.register(PatientAuthority)
+admin.site.register(NokAuthority)
+admin.site.register(DoctorAuthority)
+admin.site.register(NurseAuthorization)
+admin.site.register(TherapistAuthority)
+admin.site.register(ManagerAuthority)
+admin.site.register(Equipment)
+admin.site.register(EquipmentRental)
+admin.site.register(RehabilitationEquipment)
+admin.site.register(UseRehabilitationEquipment)
