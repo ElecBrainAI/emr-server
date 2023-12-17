@@ -2,8 +2,10 @@ from django.contrib import admin
 
 from .models import Patient, Nok, Dept, Doctor, Nurse, Therapist, Admin, Calender, ExcerTherapy, PersonTherapy, DailyLife, Perception, Sense, Physical, Muscular, Cardiopulmonary, Flexibility, Quickness, Hospitalization, Reservation, Diagnosis, Record, Questionnaire, Inbody, Xray, Authority, PatientAuthority, NokAuthority, DoctorAuthority, NurseAuthorization, TherapistAuthority, ManagerAuthority, Equipment, EquipmentRental, RehabilitationEquipment, UseRehabilitationEquipment
 
+from .models import UploadImage, UploadVideo
 
-
+admin.site.register(UploadImage)
+admin.site.register(UploadVideo)
 
 # Register your models here.
 

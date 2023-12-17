@@ -156,8 +156,21 @@ USE_TZ = True
 #추가
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+##AWS
+AWS_ACCESS_KEY_ID = "AKIAUVIPJEM5DHXQ2EO5"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_REGION = "ap-northeast-2"
+
+#S3 Storages
+AWS_STORAGE_BUCKET_NAME = "emr-video-bucket"
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME,AWS_REGION)
+AWS_QUERYSTRING_AUTH = False

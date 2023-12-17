@@ -1,5 +1,14 @@
 from django.db import models
 
+class UploadImage(models.Model):
+    image = models.CharField(max_length=30)
+    picture = models.FileField(upload_to='static/')
+    
+
+class UploadVideo(models.Model):
+    name = models.CharField(max_length=30)
+    picture = models.FileField(upload_to='media/')
+
 
 class Patient(models.Model):
     patient_id = models.CharField(primary_key=True, max_length=50)
