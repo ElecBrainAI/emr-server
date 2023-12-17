@@ -16,41 +16,54 @@ def detail(request, pat_id):
 def learn_html(request):
     return render(request, 'patman/learn_html.html')
 
+
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+
+
+@csrf_exempt  # CSRF 토큰 검사 비활성화 (개발 시에만)
 def sign_in_view(request):
     if request.method == 'POST':
-        username = request.POST.get('username', None)
-        password = request.POST.get('password', None)
+            data = json.loads(request.body)
+            print(data)
+            username = data['username']
+            password = data['password']
 
-        me = Patient.objects.get(patient_id=username)
-        if me.patient_pw == password:
-            request.session['user'] = me.username
-            return HttpResponse(f"로그인 성공! {me.username}님 환영합니다!")
-        else:
-            return redirect('/patman/sign_in')
-    elif request.method == 'GET':
-        return render(request, 'user/sign-in.html')
+            me = Patient.objects.get(patient_id=username)
+            if me.patient_pw == password:
+                request.session['user'] = me.patient_id
+                print(1)# 로그인 성공 시
+                return JsonResponse({'message': '로그인 성공'})
 
+            else:
+                print(2)
+                return JsonResponse({'message': '로그인 실패'}, status=401)
+
+
+@csrf_exempt
 def sign_up_view(request):
-    if request.method == 'GET':
-        return render(request, 'user/sign-up.html')
-    elif request.method == 'POST':
-        username = request.POST.get('username', None)
-        password = request.POST.get('password', None)
-        password2 = request.POST.get('password2', None)
-        patient_name = request.POST.get('name', None)
-        patient_birthday = request.POST.get('birthday', None)
-        patient_tel = request.POST.get('tel', None)
-        patient_home = request.POST.get('home', None)
-        patient_accept_id = request.POST.get('accept_id', None)
-        patient_hos = request.POST.get('hos', None)
-        bio = request.POST.get('bio', None)
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        print(data)
+        username = data['username']
+        password = data['password']
+        password2 = data['password2']
+        patient_name = data['name']
+        patient_birthday = data['birth']
+        patient_tel = data['tel']
+        patient_home = data['home']
+        patient_accept_id = data['parent']
+        bio = data['bio']
 
+        if patient_accept_id == '' or patient_accept_id == "null":
+            patient_accept_id = " "
         if password != password2:
-            return render(request, 'user/sign-up.html')
+            JsonResponse({'message': '회원가입 실패'}, status=401)
         else:
             exist_user = Patient.objects.filter(patient_id=username)
             if exist_user:
-                return render(request, 'user/sign-up.html')
+                return JsonResponse({'message': '이미 존재하는 회원'}, status=401)
             else:
                 new_user = Patient()
                 new_user.patient_id = username
@@ -60,7 +73,18 @@ def sign_up_view(request):
                 new_user.patient_gender = bio
                 new_user.patient_home = patient_home
                 new_user.patient_accept_id = patient_accept_id
-                new_user.patient_hos = patient_hos
+                new_user.patient_hos = 1
                 new_user.patient_pw = password
                 new_user.save()
-                return redirect('/patman/sign_in')
+                print(1)
+                return JsonResponse({'message': '회원가입 성공'})
+
+
+
+from rest_framework import viewsets
+from .serializers import PatientSerializer
+from .models import Patient
+
+class PatientViewSet(viewsets.ModelViewSet):
+    queryset = Patient.objects.all()
+    serializer_class = PatientSerializer
