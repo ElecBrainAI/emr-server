@@ -1,18 +1,29 @@
-# django-boilerplate
+# emr-view
 
-A faster way to getting started with your Django project. Have your django project up and running in no-time
+This template should help get you started developing with Vue 3 in Vite.
 
-## Getting started
-- clone this repository using: `git clone https://github.com/beingbiplov/django-boilerplate.git`
-- Move into the directory: `cd django_boilerplate`
-- Create a virtual environment and activate it. 
-- Install dependencies with: `pip install -r requirements.txt`
-- Rename your project with: `python manage.py rename <current_project_name> <new_project_name>`
+## Recommended IDE Setup
 
-Now, you are all ready to go. This django project boilerplate comes with an app called `core` where you can get started right away. `urls.py`, `templates` and `static` are all setup at app level.
-You can start the server using: `python manage.py runserver` and navigate the default home page at: `localhost:8000`
- 
-## License
-This project is licensed under the MIT license, Copyright (c) 2020 django-boilerplate. For more information see [LICENSE].
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-[LICENSE]: <https://github.com/beingbiplov/django-boilerplate/blob/master/LICENSE>
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
