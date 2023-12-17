@@ -408,7 +408,6 @@ import {FwbButton} from "flowbite-vue";
 
 html, body {
   line-height: 1.5;
-  //min-height: 100vh;
   font-family: 'Noto Sans KR', sans-serif;
   background-color: var(--c-background-secondary);
   color: var(--c-text-primary);
@@ -442,12 +441,6 @@ img {
 
 .sidebar-login {
   padding-top: 26rem;
-}
-
-@media (min-width: 640px) {
-  .sidebar {
-
-  }
 }
 
 .header {
@@ -537,9 +530,6 @@ header {
   justify-content: space-between;
 }
 
-.content-header {
-  //background-color: #4A4F5E;
-}
 
 @media (max-width: 1200px) {
   .header-navigation {
@@ -566,7 +556,6 @@ header {
 
 .button {
   font: inherit;
-  //color: inherit;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -595,7 +584,6 @@ header {
 
 .icon-button {
   font: inherit;
-  //color: inherit;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -614,10 +602,6 @@ header {
   color: var(--c-accent-primary);
 }
 
-
-.search-input {
-
-}
 
 
 
@@ -643,9 +627,6 @@ header {
   font-family: 'Righteous', sans-serif;
 }
 
-.sidebar-home {
-}
-
 .search {
   position: relative;
   display: flex;
@@ -656,7 +637,6 @@ header {
 }
 .search input {
   font: inherit;
-  //color: inherit;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -706,7 +686,6 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  //padding-top: 3rem;
   margin-top: -1px;
   border-top: 1px solid var(--c-border-primary);
 }
@@ -1132,10 +1111,6 @@ header {
   text-transform: none;
 }
 
-.button-page :hover{
-}
-
-
 
 .button-page svg {
   padding: 0;
@@ -1161,7 +1136,6 @@ header {
 
 .card {
   background-color: #FFFFFF;
-  //box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05), 0 5px 15px 0 rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
