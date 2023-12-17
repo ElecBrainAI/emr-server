@@ -2,7 +2,17 @@ from rest_framework import serializers
 
 from .models import Patient, Nok, Dept, Doctor, Nurse, Therapist, Admin, Calender, ExcerTherapy, PersonTherapy, DailyLife, Perception, Sense, Physical, Muscular, Cardiopulmonary, Flexibility, Quickness, Hospitalization, Reservation, Diagnosis, Record, Questionnaire, Inbody, Xray, Authority, PatientAuthority, NokAuthority, DoctorAuthority, NurseAuthorization, TherapistAuthority, ManagerAuthority, Equipment, EquipmentRental, RehabilitationEquipment, UseRehabilitationEquipment
 
+from .models import UploadImage, UploadVideo
 
+class UploadImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UploadImage
+        fields = "__all__"
+
+class UploadVideoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UploadVideo
+        fields = "__all__"
 
 class PatientSerializer(serializers.ModelSerializer):
     class Meta:
