@@ -27,7 +27,7 @@ export default {
           password: this.password
         });
         console.log(response.data); // 서버에서 받은 응답 확인
-        this.$router.push('/');
+        this.$router.push('/move');
         // 성공적으로 로그인했을 때의 처리
       } catch (error) {
         console.error('로그인 에러:', error);
