@@ -8,6 +8,35 @@ onMounted(() => {
 })
 
 </script>
+<script>
+import axios from 'axios'
+export default {
+  data() {
+    return {
+      username: '',
+      password: ''
+    };
+  },
+  methods: {
+    async login() {
+      try {
+        // axios 또는 fetch를 사용하여 백엔드로 로그인 정보를 전송
+        const response = await axios.post('http://127.0.0.1:8000/patman/sign_in/', {
+          username: this.username,
+          password: this.password
+        });
+        console.log(response.data); // 서버에서 받은 응답 확인
+        this.$router.push('/');
+        // 성공적으로 로그인했을 때의 처리
+      } catch (error) {
+        console.error('로그인 에러:', error);
+        this.$router.push('/login');
+        // 로그인 실패 또는 에러 처리
+      }
+    }
+  }
+};
+</script>
 
 <template>
   <head>
