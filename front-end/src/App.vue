@@ -11,9 +11,6 @@
 </template>
 
 <style>
-#app {
-
-}
 </style>
 <script setup>
 </script>

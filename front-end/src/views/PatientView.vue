@@ -1148,12 +1148,6 @@ header {
     padding-top: 26rem;
 }
 
-@media (min-width: 640px) {
-  .sidebar {
-
-  }
-}
-
 .header {
   display: flex;
   align-items: center;
@@ -1228,9 +1222,6 @@ header {
   justify-content: space-between;
 }
 
-.content-header {
-  //background-color: #4A4F5E;
-}
 
 @media (max-width: 1200px) {
   .header-navigation {
@@ -1257,7 +1248,6 @@ header {
 
 .button {
   font: inherit;
-  //color: inherit;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -1286,7 +1276,6 @@ header {
 
 .icon-button {
   font: inherit;
-  //color: inherit;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -1305,10 +1294,6 @@ header {
   color: var(--c-accent-primary);
 }
 
-
-.search-input {
-
-}
 
 .title {
   font-family: 'Righteous', sans-serif;
@@ -1337,9 +1322,6 @@ header {
   font-family: 'Righteous', sans-serif;
 }
 
-.sidebar-home {
-}
-
 .search {
   position: relative;
   display: flex;
@@ -1350,7 +1332,6 @@ header {
 }
 .search input {
   font: inherit;
-  //color: inherit;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -1400,7 +1381,6 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  //padding-top: 3rem;
   margin-top: -1px;
   border-top: 1px solid var(--c-border-primary);
 }
@@ -1434,8 +1414,6 @@ header {
 .content-main {
   width: 100%;
   height: 100%;
-  //padding-top: 2rem;
-  //padding-bottom: 6rem;
   flex-grow: 1;
   margin-inline: auto;
 }
@@ -1483,10 +1461,6 @@ header {
   text-transform: none;
 }
 
-.button-page :hover{
-}
-
-
 
 .button-page svg {
   padding: 0;
@@ -1526,7 +1500,6 @@ header {
 
 .card {
   background-color: #FFFFFF;
-  //box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05), 0 5px 15px 0 rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -1679,9 +1652,6 @@ html::-webkit-scrollbar-thumb {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-}
-
-.search-bar form button {
 }
 
 .text-sky-blue {
