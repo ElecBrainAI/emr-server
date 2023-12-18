@@ -3,8 +3,15 @@ import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
 import 'https://unpkg.com/phosphor-icons';
 import { FwbButton } from 'flowbite-vue'
+  import dayjs from "dayjs";
 
-import SideBar from "../components/SideBar.vue";
+  const currentTime = dayjs().format('YYYY-MM-DD HH:mm:ss'); // 현재날짜 + 시각
+  var interval;
+
+  interval = setInterval(function() {
+    const h1 = document.getElementsByTagName('h1')[0];
+    h1.innerHTML = new Date().toString();
+  }, 1000)
 
 
 onMounted(() => {
@@ -108,8 +115,6 @@ onMounted(() => {
       </div>
 
 
-
-
       <div class="sub-chart-bar relative flex flex-col flex-1 min-w-0 overflow-auto">
         <header class="px-2 w-full bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
           <nav class="flex h-full w-14 justify-center items-center" aria-label="Breadcrumb">
@@ -150,17 +155,47 @@ onMounted(() => {
             </form>
           </div>
         </header>
+
+        <div class="box flex flex-col flex-1 min-w-0 bg-white overflow-hidden">
+
+          <main class="main">
+            <div class="responsive-wrapper">
+              <div class="content">
+                <div class="content-grid">
+
+                    <div class="content-grid-main-information">
+                      <div class="content-grid-main-information-upper">
+                        <span class="content-grid-main-information-upper-name">이수진</span>
+                        <span class="content-grid-main-information-upper-1">여</span>
+                        <span class="content-grid-main-information-upper-1">,</span>
+                        <span class="content-grid-main-information-upper-1">34세</span>
+
+                      </div>
+                      <div class="content-grid-main-information-lower">
+                        <span class="content-grid-main-information-lower-dcode">d.cn.1</span>
+                        <span class="content-grid-main-information-lower-1">진료과</span>
+
+                        <span class="content-grid-main-information-lower-2">010-0000-0000</span>
+                      </div>
+                      <h1 class=time></h1>
+                      <div class="content-grid-main-information-lower-3">
+                        <button class="styled-w" type="button">로그아웃</button>
+                        <button class="styled-b" type="button">차트열기</button>
+
+                      </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+              </div>
+            </div>
+        </main>
+        </div>
       </div>
-
-
-
-
-
-
-
-
-
-
 
     </div>
   </body>
@@ -204,7 +239,7 @@ img {
 
 .responsive-wrapper {
   width: 100%;
-  height: 84vh;
+  height: 100%;
   margin-inline: auto;
   overflow: hidden;
 }
@@ -395,6 +430,41 @@ header {
 
 }
 
+.styled-w {
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #111827;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #E2E2E2;
+}
+
+.styled-w:active {
+
+    box-shadow: inset -.1rem -.1rem 1.4rem  #F9F9F9, inset .1rem .1rem .2rem #303032;
+    cursor: pointer;
+
+}
+
+.styled-b {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 20px;
+  background-color: #335ACA;
+}
+
+.styled-b:active {
+
+    box-shadow: inset -.1rem -.1rem 1.4rem  #434ce8, inset .1rem .2rem .4rem #303032;
+    cursor: pointer;
+
+}
 
 
 
@@ -406,6 +476,13 @@ header {
   height: 44px;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.box {
+  background-color: var(--c-background-secondary);
+  width: 98%;
+  height: 98%;
+  margin-inline: auto;
 }
 
 .main {
@@ -501,7 +578,7 @@ header {
   border-top: 1px solid var(--c-border-primary);
   display: flex;
   align-items: flex-start;
-  margin-inline: auto;
+  margin: 0 auto;
 }
 
 .content-main {
@@ -512,16 +589,99 @@ header {
 }
 
 .content-grid {
-  display: grid;
+  width: 100%;
+  height: 98%;
+  background-color: #FFFFFF;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0.2rem;
+}
+
+.content-grid-main-information {
   width: 100%;
   height: 100%;
-  flex-grow: 1;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 0.75rem;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-inline: auto;
+  background-color: #FFFFFF;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: auto;
 }
+
+.content-grid-main-information-upper {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+}
+
+.content-grid-main-information-upper-name{
+  color: #111827;
+  margin-top: 1.25rem;
+  margin-right: 0.2rem;
+  margin-left: 1.25rem;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.content-grid-main-information-upper-1{
+  color: #767577;
+  margin-top: 1.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.content-grid-main-information-lower-dcode {
+  color: #111827;
+  margin-left: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.content-grid-main-information-lower {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+}
+
+.content-grid-main-information-lower-1{
+  color: #767577;
+  margin-left: 0.75rem;
+  margin-right: 1.5rem;
+  margin-top: 0.12rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.content-grid-main-information-lower-2{
+  color: #767577;
+  margin-right: 0.5rem;
+  margin-top: 0.12rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.time {
+  font-size: 1.5rem;
+  margin-right: auto;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+.content-grid-main-information-lower-3 {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto
+}
+
 
 .left-content {
   display: flex;

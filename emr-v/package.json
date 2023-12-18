@@ -10,6 +10,7 @@
   "dependencies": {
     "@vuepic/vue-datepicker": "^7.4.0",
     "axios": "^1.6.2",
+    "dayjs": "^1.11.10",
     "flowbite": "^2.2.0",
     "flowbite-datepicker": "^1.2.6",
     "flowbite-vue": "^0.1.1",

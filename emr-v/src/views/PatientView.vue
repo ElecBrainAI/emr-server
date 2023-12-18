@@ -406,7 +406,7 @@ window.addEventListener("load", function() {
                         <svg class="w-3 h-3 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 18">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm-2 3h4a4 4 0 0 1 4 4v2H1v-2a4 4 0 0 1 4-4Z"/>
                         </svg>
-                        Inbody 기록
+                        X-ray 기록
                     </h3>
                     <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="x-ray-modal">
                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -466,6 +466,159 @@ window.addEventListener("load", function() {
                       <div>
                           <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">사진</label>
                           <span class="mb-2 text-xs font-bold text-gray-400"><a href="#">사진</a></span>
+                      </div>
+                    </div>
+
+                    <div class="flex justify-between">
+                      <button type="submit" class="text-gray-600 bg-white border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">취소</button>
+                      <button type="submit" class="text-white bg-sky-blue hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">확인</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- treatment modal -->
+    <div id="treatment-modal" tabindex="0" aria-hidden="true" class="modal hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-1000 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-[640px] max-h-full">
+            <!-- Modal content -->
+            <div class="modal relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-2 md:p-2 border-b rounded-t dark:border-gray-600 ml-2">
+                    <h3 class="flex flex-row items-center text-xs font-semibold text-gray-600 dark:text-white">
+                        <svg class="w-3 h-3 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 18">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm-2 3h4a4 4 0 0 1 4 4v2H1v-2a4 4 0 0 1 4-4Z"/>
+                        </svg>
+                        진료 기록
+                    </h3>
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="treatment-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <form class="p-4 md:p-5">
+                    <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white pb-2 border-b-2">2022-02-16 10:16</label>
+                    <div class="grid gap-6 mb-10 md:grid-cols-4">
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">윗몸일으키기</label>
+                          <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="(횟수/분)" required>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">버피</label>
+                          <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="(횟수/분)" required>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">왕복 오래달리기</label>
+                          <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="횟수" required>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">인터벌 트레이닝</label>
+                          <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="분" required>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">제자리 멀리뛰기</label>
+                          <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="cm" required>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">사이드 스템</label>
+                          <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="(횟수/분)" required>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">앉아윗몸앞으로굽히기</label>
+                          <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="cm" required>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">요가</label>
+                          <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="분" required>
+                      </div>
+                    </div>
+
+                    <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white pb-2 border-b-2">과거내역</label>
+                    <div class="grid gap-6 mb-6 md:grid-cols-4">
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">윗몸일으키기</label>
+                          <span class="mb-2 text-xs font-bold text-gray-400">(0개/0분)</span>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">버피</label>
+                          <span class="mb-2 text-xs font-bold text-gray-400">(0개/0분)</span>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">왕복 오래달리기</label>
+                          <span class="mb-2 text-xs font-bold text-gray-400">0번</span>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">인터벌 트래이닝</label>
+                          <span class="mb-2 text-xs font-bold text-gray-400">0분</span>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">제자리 멀리뛰기</label>
+                          <span class="mb-2 text-xs font-bold text-gray-400">0cm</span>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">사이드 스템</label>
+                          <span class="mb-2 text-xs font-bold text-gray-400">(0개/0분)</span>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">앉아윗몸앞으로굽히기</label>
+                          <span class="mb-2 text-xs font-bold text-gray-400">0cm</span>
+                      </div>
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">요가</label>
+                          <span class="mb-2 text-xs font-bold text-gray-400">0분</span>
+                      </div>
+                    </div>
+
+                    <div class="flex justify-between">
+                      <button type="submit" class="text-gray-600 bg-white border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">취소</button>
+                      <button type="submit" class="text-white bg-sky-blue hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">확인</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- prescription modal -->
+    <div id="prescription-modal" tabindex="0" aria-hidden="true" class="modal hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-1000 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-[640px] max-h-full">
+            <!-- Modal content -->
+            <div class="modal relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-2 md:p-2 border-b rounded-t dark:border-gray-600 ml-2">
+                    <h3 class="flex flex-row items-center text-xs font-semibold text-gray-600 dark:text-white">
+                        <svg class="w-3 h-3 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 18">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm-2 3h4a4 4 0 0 1 4 4v2H1v-2a4 4 0 0 1 4-4Z"/>
+                        </svg>
+                        진단 및 처방
+                    </h3>
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="prescription-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <form class="p-4 md:p-5">
+                    <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white pb-2 border-b-2">2022-02-16 10:16</label>
+                    <div class="grid gap-6 mb-10 ">
+                      <div>
+                        <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">진단</label>
+                        <textarea type="text" id="name" class="content-grid-textbox" placeholder="진단을 적어주세요." required></textarea>
+                      </div>
+
+                    </div>
+
+                    <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white pb-2 border-b-2">2022-02-16 10:16</label>
+                    <div class="grid gap-6 mb-6 ">
+                      <div>
+                          <label for="name" class="block mb-2 text-xs font-bold text-gray-600 dark:text-white">처방</label>
+                          <textarea type="text" id="name" class="content-grid-textbox" placeholder="처방을 적어주세요." required></textarea>
                       </div>
                     </div>
 
@@ -957,17 +1110,27 @@ window.addEventListener("load", function() {
                       <div class="inline-flex text-sm text-gray-500 bg-white w-full h-10 items-center">
                         <h5 class="ml-1 text-sm font-bold text-gray-600 dark:text-white">진료 기록</h5>
                       </div>
+                      <div class="flex flex-col h-full mb-6 justify-between">
 
-                      <p class="flex flex-row ml-1 text-xs font-normal">
-                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-                          <path d="M16 0H4a2 2 0 0 0-2 2v1H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM13.929 17H7.071a.5.5 0 0 1-.5-.5 3.935 3.935 0 1 1 7.858 0 .5.5 0 0 1-.5.5Z"/>
-                        </svg>
-                        <a class="ml-1 font-semibold">X-ray 1</a>
-                        <span class="ml-1">발목</span>
-                        <span class="ml-1">11:06</span>
-                        <span class="ml-1"><a href="#">사진</a></span>
-                        <span class="ml-1">| 홍길동</span>
-                      </p>
+                        <p class="flex flex-row ml-1 text-xs font-normal">
+                          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                            <path d="M16 0H4a2 2 0 0 0-2 2v1H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM13.929 17H7.071a.5.5 0 0 1-.5-.5 3.935 3.935 0 1 1 7.858 0 .5.5 0 0 1-.5.5Z"/>
+                          </svg>
+                          <a class="ml-1 font-semibold">X-ray 1</a>
+                          <span class="ml-1">발목</span>
+                          <span class="ml-1">11:06</span>
+                          <span class="ml-1"><a href="#">사진</a></span>
+                          <span class="ml-1">| 홍길동</span>
+                        </p>
+                        <div>
+                          <button type="button" data-modal-target="treatment-modal" data-modal-toggle="treatment-modal"  class="ml-3 px-5 py-2.5 text-xs font-medium text-white inline-flex items-center bg-[#5A9FFE] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            <svg class="w-3 h-3 text-gray-800 dark:text-white mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 20 20">
+                              <path d="m13.835 7.578-.005.007-7.137 7.137 2.139 2.138 7.143-7.142-2.14-2.14Zm-10.696 3.59 2.139 2.14 7.138-7.137.007-.005-2.141-2.141-7.143 7.143Zm1.433 4.261L2 12.852.051 18.684a1 1 0 0 0 1.265 1.264L7.147 18l-2.575-2.571Zm14.249-14.25a4.03 4.03 0 0 0-5.693 0L11.7 2.611 17.389 8.3l1.432-1.432a4.029 4.029 0 0 0 0-5.689Z"/>
+                            </svg>
+                            진료기록 추가
+                          </button>
+                        </div>
+                      </div>
 
 
 
@@ -1032,7 +1195,16 @@ window.addEventListener("load", function() {
                     <div class="inline-flex text-sm text-gray-500 bg-white w-full h-10 items-center">
                       <h5 class="ml-1 text-sm font-bold text-gray-600 dark:text-white">진단 및 처방</h5>
                     </div>
-                <footer class="flex space-between bg-white rounded-lg shadow border border-gray-100 dark:bg-gray-800">
+                    <div>
+                      <div class="mb-3">
+                        <button type="button" data-modal-target="prescription-modal" data-modal-toggle="prescription-modal"  class="ml-3 px-5 py-2.5 text-xs font-medium text-white inline-flex items-center bg-[#5A9FFE] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                          <svg class="w-3 h-3 text-gray-800 dark:text-white mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 20 20">
+                            <path d="m13.835 7.578-.005.007-7.137 7.137 2.139 2.138 7.143-7.142-2.14-2.14Zm-10.696 3.59 2.139 2.14 7.138-7.137.007-.005-2.141-2.141-7.143 7.143Zm1.433 4.261L2 12.852.051 18.684a1 1 0 0 0 1.265 1.264L7.147 18l-2.575-2.571Zm14.249-14.25a4.03 4.03 0 0 0-5.693 0L11.7 2.611 17.389 8.3l1.432-1.432a4.029 4.029 0 0 0 0-5.689Z"/>
+                          </svg>
+                          진단 및 처방 추가
+                        </button>
+                      </div>
+                  <footer class="flex space-between bg-white rounded-lg shadow border border-gray-100 dark:bg-gray-800">
                     <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
                       <span class="flex flex-row items-center text-sm text-gray-500 sm:text-center dark:text-gray-400">
                         <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
@@ -1069,6 +1241,7 @@ window.addEventListener("load", function() {
 
                     </div>
                 </footer>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1723,6 +1896,16 @@ html::-webkit-scrollbar-thumb {
   background-color: #5A9FFE;
 }
 
+
+.content-grid-textbox{
+  width: 95%;
+  height: 170px;
+  margin-top: 0.5rem;
+  margin-left: 0.75rem;
+  border: 1.5px solid #E2E2E2;
+  border-radius: 5px;
+  resize: none;
+}
 
 </style>
 
