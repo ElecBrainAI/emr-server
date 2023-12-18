@@ -22,7 +22,7 @@ export default {
     async login() {
       try {
         // axios 또는 fetch를 사용하여 백엔드로 로그인 정보를 전송
-        const response = await axios.post('http://127.0.0.1:8000/patman/sign_in/', {
+        const response = await axios.post('https://port-0-emr-server-5mk12alph04yvt.sel5.cloudtype.app/patman/sign_in/', {
           username: this.username,
           password: this.password
         });
