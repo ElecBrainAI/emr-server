@@ -170,11 +170,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 ##AWS
-AWS_ACCESS_KEY_ID = "AKIAUVIPJEM5DHXQ2EO5"
-AWS_SECRET_ACCESS_KEY = "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"
+AWS_ACCESS_KEY_ID = get_env_variable('ACCESS_KEY')
+AWS_SECRET_ACCESS_KEY = get_env_variable('SECRET_ACCESS_KEY')
 AWS_REGION = "ap-northeast-2"
 
 #S3 Storages
-AWS_STORAGE_BUCKET_NAME = "emr-video-bucket"
+AWS_STORAGE_BUCKET_NAME = get_env_variable('STORAGE_BUCKET')
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME,AWS_REGION)
 AWS_QUERYSTRING_AUTH = False
