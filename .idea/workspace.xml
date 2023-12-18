@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b5c26ce-0e3c-4cc1-b373-723cccd53d3d" name="Changes" comment="" />
+    <list default="true" id="8b5c26ce-0e3c-4cc1-b373-723cccd53d3d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ev/src/components/ContentConst.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ev/src/components/FooterFoost.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ev/src/components/HeaderHost.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ev/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ev/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ev/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ev/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ev/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ev/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ev/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ev/src/main.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +54,7 @@
     "WebServerToolWindowFactoryState": "false",
     "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/jhw03/Downloads/emr-db-main/emr-server",
+    "last_opened_file_path": "C:/Users/qrc47/Downloads/sv/emr-server",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -79,6 +87,7 @@
   <component name="RunManager">
     <configuration name="emr-server" type="Python.DjangoServer" factoryName="Django server">
       <module name="emr-server" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -126,7 +135,6 @@
       <workItem from="1700811620666" duration="524000" />
       <workItem from="1700891105757" duration="5567000" />
       <workItem from="1702816245925" duration="23047000" />
-      <workItem from="1702841887711" duration="1374000" />
     </task>
     <servers />
   </component>

@@ -443,6 +443,11 @@ img {
   padding-top: 26rem;
 }
 
+@media (min-width: 640px) {
+  .sidebar {
+
+  }
+}
 
 .header {
   display: flex;
@@ -531,6 +536,9 @@ header {
   justify-content: space-between;
 }
 
+.content-header {
+}
+
 @media (max-width: 1200px) {
   .header-navigation {
     display: none;
@@ -603,6 +611,10 @@ header {
 }
 
 
+.search-input {
+
+}
+
 
 
 
@@ -625,6 +637,9 @@ header {
 
 .title {
   font-family: 'Righteous', sans-serif;
+}
+
+.sidebar-home {
 }
 
 .search {
@@ -1109,6 +1124,9 @@ header {
   border: 2px solid #767577;
   padding: 0.5rem;
   text-transform: none;
+}
+
+.button-page :hover{
 }
 
 

@@ -157,6 +157,9 @@ input:focus {
   align-items: center;
 }
 
+.button-selectId input{
+
+}
 
 .login-middle {
   display: flex;

@@ -1148,6 +1148,11 @@ header {
     padding-top: 26rem;
 }
 
+@media (min-width: 640px) {
+  .sidebar {
+
+  }
+}
 
 .header {
   display: flex;
@@ -1223,6 +1228,9 @@ header {
   justify-content: space-between;
 }
 
+.content-header {
+}
+
 @media (max-width: 1200px) {
   .header-navigation {
     display: none;
@@ -1295,6 +1303,10 @@ header {
 }
 
 
+.search-input {
+
+}
+
 .title {
   font-family: 'Righteous', sans-serif;
 }
@@ -1320,6 +1332,9 @@ header {
 
 .title {
   font-family: 'Righteous', sans-serif;
+}
+
+.sidebar-home {
 }
 
 .search {
@@ -1460,6 +1475,11 @@ header {
   padding: 0.5rem;
   text-transform: none;
 }
+
+.button-page :hover{
+}
+
+
 
 .button-page svg {
   padding: 0;
@@ -1651,6 +1671,9 @@ html::-webkit-scrollbar-thumb {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
+}
+
+.search-bar form button {
 }
 
 .text-sky-blue {

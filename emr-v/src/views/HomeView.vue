@@ -4,7 +4,7 @@ import { initFlowbite } from 'flowbite'
 import 'https://unpkg.com/phosphor-icons';
 import { FwbButton } from 'flowbite-vue'
 
-import SideBar from "../Components/SideBar.vue";
+import SideBar from "../components/SideBar.vue";
 
 
 onMounted(() => {
@@ -213,6 +213,11 @@ img {
   flex-wrap: wrap;
 }
 
+@media (min-width: 640px) {
+  .sidebar {
+
+  }
+}
 
 .title {
   font-family: 'Righteous', sans-serif;
@@ -311,6 +316,8 @@ header {
 }
 
 
+.content-header {
+}
 
 @media (max-width: 1200px) {
   .header-navigation {
@@ -381,6 +388,11 @@ header {
 .icon-button:focus, .icon-button:hover {
   background-color: var(--c-background-tertiary);
   color: var(--c-accent-primary);
+}
+
+
+.search-input {
+
 }
 
 
@@ -541,6 +553,10 @@ header {
   padding: 0.5rem;
   text-transform: none;
 }
+
+.button-page :hover{
+}
+
 
 
 .button-page svg {
